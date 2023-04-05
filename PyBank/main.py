@@ -19,14 +19,13 @@ with open(budget_csv, 'r') as csvfile:
         total = total + int(row[1])
         total_months = total_months + 1
 
-        #greatest increases 
+        #find budget increases and greatest increase
         if (int(row[1])-previous_mo) > 0: 
             poschanges.append(int(row[1])-previous_mo)
             pos_months.append(row[0])
             previous_mo = int(row[1])
             
-            
-        #greatest decreases 
+        #find budget decreases and greatest decrease
         if (int(row[1])-previous_mo) < 0:
             negchanges.append(int(row[1])-previous_mo)
             neg_months.append(row[0])
